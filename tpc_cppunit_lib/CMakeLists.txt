@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.7.1 )
 
-project( tpc_cppunit_lib C CXX )
+project( jmsd_tpc_cppunit_lib C CXX )
 
 
 JMSD_SHOW_PROJECT_HEADER()
