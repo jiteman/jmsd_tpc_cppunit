@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.7.1 )
 
-project( jmsd_tpc_cppunit_lib C CXX )
+project( tpc_cppunit_lib C CXX )
 
 
 JMSD_SHOW_PROJECT_HEADER()
@@ -8,6 +8,8 @@ JMSD_SHOW_PROJECT_HEADER()
 
 include( ${JMSD_COMPONENT_CMAKE_SETTINGS_PATH}/tpc-cppunit-lib-set-compiler-settings.cmake )
 set( JMSD_THIS_PROJECT_SOURCE_ROOT ${JMSD_COMPONENT_SOURCE_ROOT_PATH} )
+
+list( APPEND ${PROJECT_NAME}_TEST_SOURCE_DIRS_VAR ${JMSD_COMPONENT_SOURCE_ROOT_PATH}/examples/cppunittest )
 
 ## include dependencies
 set( ${PROJECT_NAME}_DEPENDENCY_DIRS_VAR
@@ -70,4 +72,5 @@ target_link_libraries( ${PROJECT_NAME} ${${PROJECT_NAME}_DEPENDENCY_LIBS_VAR} )
 
 ## Expose public includes to other subprojects through cache variable.
 include( ${JMSD_CMAKE_SETTINGS_PATH}/set-expose-dependencies.cmake )
+include( ${JMSD_CMAKE_SETTINGS_PATH}/set-expose-test-source-directories.cmake )
 JMSD_SHOW_PROJECT_FOOTER()
