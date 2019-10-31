@@ -28,13 +28,14 @@ file( GLOB_RECURSE header_and_source_files
 
 set( JMSD_THIS_PROJECT_FILES_TO_REMOVE
 	"CommandLineParser"
+	"DllMain"
 	"DllPlugInTester"
 	"TestPlugInInterface" )
 JMSD_REMOVE_FILES_FROM_THE_LIST( header_and_source_files JMSD_THIS_PROJECT_FILES_TO_REMOVE )
 
-if ( UNIX )
-	JMSD_REMOVE_FILE_FROM_THE_LIST( header_and_source_files "DllMain" )
-endif()
+#if ( UNIX )
+#	JMSD_REMOVE_FILE_FROM_THE_LIST( header_and_source_files "DllMain" )
+#endif()
 
 add_library( ${PROJECT_NAME} SHARED ${header_and_source_files} )
 
